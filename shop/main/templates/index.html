@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- самая простая структура интернет магазина, с корзиной -->
+    <div align="center"><a href="/cart/{{user.id}}">Go to Cart</a></div>
+    <div class="products_list" align="center">
+        <!-- product with name description and price -->
+        {% for product in products %}
+
+            <div class="product" style="padding: 50px 0;">
+                <h2>{{product.name}}</h2>
+                <p>{{product.description}}</p>
+                <p>Price: <span>{{product.price}}$</span></p>
+                <p>
+                    <!-- добавление товара в корзину по url /cart -->
+                    <a href="/add_to_cart/{{product.id}}/{{user.id}}">Add to cart</a>
+                    <!-- добавление товара в корзину по кнопке -->
+                </p>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+
+</html>

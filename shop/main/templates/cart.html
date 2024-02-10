@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div align="center"><a href="/">Go back</a></div>
+    <div class="products" align="center">
+        {% for product in products %}
+
+        <div class="product" style="padding: 50px 0;">
+            <h2>{{product.name}}</h2>
+            <p>{{product.description}}</p>
+            <p>Price: <span>{{product.price}}$</span></p>
+        </div>
+        {% endfor %}
+
+    </div>
+</body>
+
+</html>
